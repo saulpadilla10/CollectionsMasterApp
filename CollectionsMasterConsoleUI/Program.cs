@@ -106,7 +106,7 @@ namespace CollectionsMasterConsoleUI
                 Console.WriteLine("What number will you search for in the number list?");
 
                 present = int.TryParse(Console.ReadLine(), out userInput);
-             
+
 
             } while (present == false);
 
@@ -128,7 +128,6 @@ namespace CollectionsMasterConsoleUI
             Console.WriteLine("Evens Only!!");
 
             OddKiller(num);
-            NumberPrinter(num);
 
             Console.WriteLine("------------------");
 
@@ -145,6 +144,7 @@ namespace CollectionsMasterConsoleUI
                 }
             }
             NumberPrinter(num);
+
             Console.WriteLine("------------------");
 
             //TODO: Convert the list to an array and store that into a variable
@@ -157,8 +157,9 @@ namespace CollectionsMasterConsoleUI
             #endregion
         }
 
-            private static void ThreeKiller(int[] numbers)
-            {
+
+        private static void ThreeKiller(int[] numbers)
+        {
             for (int i = 0; i < numbers.Length; i++)
             {
                 if (numbers[i] % 3 == 0)
@@ -166,49 +167,48 @@ namespace CollectionsMasterConsoleUI
                     numbers[i] = 0;
                 }
             }
-          
+
 
         }
 
             private static void OddKiller(List<int> numberList)
             {
-            foreach (int number in numberList)
-            {
-                if (number % 2 == 0)
+                foreach (int number in numberList)
                 {
-                    Console.WriteLine(number);
+                    if (number % 2 == 0)
+                    {
+                        Console.WriteLine(number);
+
+                    }
 
                 }
 
             }
-        }
-
             private static void NumberChecker(List<int> numberList, int searchNumber)
-            { 
-           
-            if (searchNumber <= 50)
             {
-                Console.WriteLine("Pass.");
+
+                if (searchNumber <= 50)
+                {
+                    Console.WriteLine("Pass.");
+                }
+                else
+                {
+                    Console.WriteLine("Error.");
+                }
+
+
+
             }
-            else
+            private static void Populater(List<int> numberList)
             {
-                Console.Write("Error.");
+                for (int i = 0; i < 50; i++)
+                {
+                    Random random = new Random();
+                    var randomNumber = random.Next(0, 49);
+                    numberList.Add(randomNumber);
+                }
+
             }
-
-
-        }
-
-        private static void Populater(List<int> numberList)
-        {
-            for (int i = 0; i < 50; i++)
-            {
-                Random random = new Random();
-                var randomNumber = random.Next(0, 49);
-                numberList.Add(randomNumber);
-            }
-
-        }
-
             private static void Populater(int[] numbers)
             {
 
@@ -217,13 +217,14 @@ namespace CollectionsMasterConsoleUI
                     Random hit = new Random();
                     numbers[i] = hit.Next(0, 50);
                 }
-
             }
+
+
 
 
             private static void ReverseArray(int[] array)
             {
-            Array.Reverse(array);
+                Array.Reverse(array);
             }
 
             /// <summary>
@@ -240,8 +241,6 @@ namespace CollectionsMasterConsoleUI
                 }
 
             }
-
         
     }
-
 }
