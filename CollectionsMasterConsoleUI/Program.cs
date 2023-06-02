@@ -134,15 +134,9 @@ namespace CollectionsMasterConsoleUI
             //TODO: Sort the list then print results
             Console.WriteLine("Sorted Evens!!");
 
-            for (int i = 0; i < num.Count; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    num.Sort();
-                    Console.WriteLine(num[i]);
-
-                }
-            }
+            num.Sort();
+            OddKiller(num);
+            
 
             Console.WriteLine("------------------");
 
